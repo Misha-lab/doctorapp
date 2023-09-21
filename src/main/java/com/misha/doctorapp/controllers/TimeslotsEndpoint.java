@@ -24,7 +24,8 @@ public class TimeslotsEndpoint {
     /**
      * Конечная точка для SOAP-сервиса, который создаёт талоны по заданным правилам.
      * Доступ осуществляется по URL: http://localhost:8080/api/v1/timeslots/generate, метод запроса: POST.
-     * Возвращает сообщение о том, столько талонов было сгенерировано.
+     * WSDL схема: http://localhost:8080/api/v1/timeslots/generate/timeslots.wsdl
+     * Возвращает сообщение о том, сколько талонов было сгенерировано.
      */
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "getTicketsRequest")
