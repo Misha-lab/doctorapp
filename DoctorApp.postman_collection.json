@@ -1,0 +1,219 @@
+{
+	"info": {
+		"_postman_id": "d9415e30-2403-4219-a270-fb121fa5159e",
+		"name": "DoctorApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "28372652"
+	},
+	"item": [
+		{
+			"name": "Добавление Доктора",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Максим\",\r\n    \"lastName\": \"Максимов\",\r\n    \"fatherName\": \"Максимович\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/doctor/add"
+			},
+			"response": []
+		},
+		{
+			"name": "Список докторов",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/v1/doctors"
+			},
+			"response": []
+		},
+		{
+			"name": "Добавление Пациента",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Роман\",\r\n    \"lastName\": \"Романов\",\r\n    \"fatherName\": \"Романович\",\r\n    \"birthday\": \"2004-04-24\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/patient/add"
+			},
+			"response": []
+		},
+		{
+			"name": "Список пациентов",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/v1/patients"
+			},
+			"response": []
+		},
+		{
+			"name": "Добавление Талона",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"startTime\": \"2023-09-18T15:15:00\",\r\n    \"endTime\": \"2023-09-18T15:30:00\",\r\n    \"doctor\": \r\n    {\r\n        \"id\": 7,\r\n        \"uuid\": \"6fd37a62-786e-427b-9656-8d669d3fad6d\",\r\n        \"firstName\": \"Максим\",\r\n        \"lastName\": \"Максимов\",\r\n        \"fatherName\": \"Максимович\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/ticket/add"
+			},
+			"response": []
+		},
+		{
+			"name": "Список талонов",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/v1/tickets"
+			},
+			"response": []
+		},
+		{
+			"name": "Удаление Доктора",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 7,\r\n    \"uuid\": \"6fd37a62-786e-427b-9656-8d669d3fad6d\",\r\n    \"firstName\": \"Максим\",\r\n    \"lastName\": \"Максимов\",\r\n    \"fatherName\": \"Максимович\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/doctor/remove"
+			},
+			"response": []
+		},
+		{
+			"name": "Удаление Пациента",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 5,\r\n    \"uuid\": \"ac1e159a-8dce-472c-af08-bae4479d19a7\",\r\n    \"firstName\": \"Роман\",\r\n    \"lastName\": \"Романов\",\r\n    \"fatherName\": \"Романович\",\r\n    \"birthday\": \"2004-04-24\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/patient/remove"
+			},
+			"response": []
+		},
+		{
+			"name": "Удаление Талона",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":8,\r\n    \"startTime\": \"2023-09-18T23:15:00\",\r\n    \"endTime\": \"2023-09-18T23:30:00\",\r\n    \"doctor\": \r\n    {\r\n        \"id\": 7,\r\n        \"uuid\": \"6fd37a62-786e-427b-9656-8d669d3fad6d\",\r\n        \"firstName\": \"Максим\",\r\n        \"lastName\": \"Максимов\",\r\n        \"fatherName\": \"Максимович\"\r\n    },\r\n    \"is_free\": true,\r\n    \"patient_id\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/ticket/remove"
+			},
+			"response": []
+		},
+		{
+			"name": "Найти талоны пациента по UUID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/v1/tickets/patient/uuid/5df0b66a-d809-41a5-be9a-794b54a3ec61"
+			},
+			"response": []
+		},
+		{
+			"name": "Найти талоны пациента по ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/v1/tickets/patient/id/3"
+			},
+			"response": []
+		},
+		{
+			"name": "Свободные талоны к доктору",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/v1/tickets/free/doctor2/26-09-2023"
+			},
+			"response": []
+		},
+		{
+			"name": "Взять талончик",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"uuid\": \"4aed809e-8565-476e-99e9-4cd21e26639f\",\r\n    \"firstName\": \"Михаил\",\r\n    \"lastName\": \"Никитков\",\r\n    \"fatherName\": \"Юрьевич\",\r\n    \"birthday\": \"2001-01-24\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/tickets/take1"
+			},
+			"response": []
+		},
+		{
+			"name": "Создание талонов (SOAP)",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\"\r\n                  xmlns:gs=\"http://misha/doctorapp/generator\">\r\n    <soapenv:Header/>\r\n    <soapenv:Body>\r\n        <gs:getTicketsRequest>\r\n            <gs:rules>\r\n                <gs:startTime>2023-09-26T08:00:00</gs:startTime>\r\n                <gs:endTime>2023-09-26T14:00:00</gs:endTime>\r\n                <gs:ticketDurationInMinutes>15</gs:ticketDurationInMinutes>\r\n                <gs:ticketsCount>18</gs:ticketsCount>\r\n                <gs:dinnerStartTime>2023-09-26T12:00:00</gs:dinnerStartTime>\r\n                <gs:dinnerEndTime>2023-09-26T13:00:00</gs:dinnerEndTime>\r\n            </gs:rules>\r\n            <gs:doctorId>2</gs:doctorId>\r\n        </gs:getTicketsRequest>\r\n    </soapenv:Body>\r\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/timeslots/generate"
+			},
+			"response": []
+		}
+	]
+}

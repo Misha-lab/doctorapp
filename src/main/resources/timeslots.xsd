@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://misha/doctorapp/generator"
+           xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
+           targetNamespace="http://misha/doctorapp/generator" elementFormDefault="qualified">
+
+    <xs:element name="getTicketsRequest">
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="rules" type="tns:rules"/>
+                <xs:element name="doctorId" type="xs:int"/>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getTicketsResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="message" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="rules">
+        <xs:sequence>
+            <xs:element name="startTime" type="xs:dateTime"/>
+            <xs:element name="endTime" type="xs:dateTime"/>
+            <xs:element name="dinnerStartTime" minOccurs="0" type="xs:dateTime"/>
+            <xs:element name="dinnerEndTime" minOccurs="0" type="xs:dateTime"/>
+            <xs:element name="ticketDurationInMinutes" type="xs:int"/>
+            <xs:element name="ticketsCount" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>
